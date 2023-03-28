@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## About 
+
+This is a personal portfolio website created with Nextjs, Tailwind CSS, MongoDB, and some Framer motion to display my projects, be that they are code related or painting miniatures with a blog. 
+
 ## Getting Started
 
 First, run the development server:
