@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import Logo from "./Logo"
+import Logo from "./Logo";
+import { TwitterIcon, GitHubIcon, LinkedInIcon } from "./Icons";
+
 
 const CustomLink = ({href, title, className=""}) => {
   const router = useRouter();
@@ -11,8 +13,9 @@ const CustomLink = ({href, title, className=""}) => {
        {title}
        {/* Style the header links with thick or thin underscore that will have an animation
        effect when hovering  */}
-       <span className="h-[1px] inline-block w-0 bg-slate-500 absolute left-0 -bottom-0.5
-       group-hover:w-full transition-[width] ease duration-500">
+       {/* Keep underscore under current page using the useRouter and rounter.asPath property */}
+       <span className={`h-[1px] inline-block bg-slate-500 absolute left-0 -bottom-0.5
+       group-hover:w-full transition-[width] ease duration-500 ${router.asPath === href ? 'w-full' : 'w-0'}`}>
         &nbsp;
        </span>
     </Link>
@@ -31,12 +34,18 @@ const NavBar = () => {
         <CustomLink href="/articles" title="Articles" className="mx-4"/>
       </nav>
       
-      // Social media links that will open in a new page
+      // Social media links that will open in a new page, add svg icons
       <nav>
-        <Link href="/" target ={"_blank"}>T</Link>
-        <Link href="/" target ={"_blank"}>T</Link>
-        <Link href="/" target ={"_blank"}>T</Link>
-        <Link href="/" target ={"_blank"}>T</Link>
+        <Link href="/" target ={"_blank"}>
+          <TwitterIcon />  
+        </Link>
+        <Link href="/" target ={"_blank"}>
+          <GitHubIcon />
+        </Link>
+        <Link href="/" target ={"_blank"}>
+          <LinkedInIcon />
+        </Link>
+        {/* <Link href="/" target ={"_blank"}>T</Link> */}
 
       </nav>
       <div className="absolute left-[50%] top-2 translate-x-[-50%]">
