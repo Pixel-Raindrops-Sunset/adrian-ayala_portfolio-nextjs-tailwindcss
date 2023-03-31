@@ -1,4 +1,4 @@
-const TwitterIcon = ({className, ...rest}) => (
+export const TwitterIcon = ({className, ...rest}) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1.23em"
@@ -14,7 +14,7 @@ const TwitterIcon = ({className, ...rest}) => (
     </svg>
   );
 
-  const LinkedInIcon = ({ className, ...rest}) => (
+  export const LinkedInIcon = ({ className, ...rest}) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
@@ -31,7 +31,7 @@ const TwitterIcon = ({className, ...rest}) => (
   );
   
   
-  const GitHubIcon = ({ className, ...rest}) => (
+  export const GitHubIcon = ({ className, ...rest}) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1.03em"
@@ -47,5 +47,5 @@ const TwitterIcon = ({className, ...rest}) => (
     </svg>
   );
   
-  export default SvgComponent
+  
   

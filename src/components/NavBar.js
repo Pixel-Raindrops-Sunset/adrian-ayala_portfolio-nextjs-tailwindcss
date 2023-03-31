@@ -7,6 +7,7 @@ import { TwitterIcon, GitHubIcon, LinkedInIcon } from "./Icons";
 
 const CustomLink = ({href, title, className=""}) => {
   const router = useRouter();
+  // console.log(router) look at the available properties 
   return(
     // A custom link so that when the user navigates to pages it will apply to this
     <Link href={href} className={`${className} relative group`}>
@@ -27,14 +28,14 @@ const NavBar = () => {
   return (
     <header className="w-full px-32 py-8 font-medium flex items-center justify-between">
       <nav>
-        // Space out the links margins, far too close at start
+        
         <CustomLink href="/" title="Home" className="mr-4"/>
         <CustomLink href="/about" title="About" className="mx-4"/>
         <CustomLink href="/projects" title="Projects" className="mx-4"/>
         <CustomLink href="/articles" title="Articles" className="mx-4"/>
       </nav>
+        
       
-      // Social media links that will open in a new page, add svg icons
       <nav>
         <Link href="/" target ={"_blank"}>
           <TwitterIcon />  
@@ -45,7 +46,7 @@ const NavBar = () => {
         <Link href="/" target ={"_blank"}>
           <LinkedInIcon />
         </Link>
-        {/* <Link href="/" target ={"_blank"}>T</Link> */}
+         
 
       </nav>
       <div className="absolute left-[50%] top-2 translate-x-[-50%]">
