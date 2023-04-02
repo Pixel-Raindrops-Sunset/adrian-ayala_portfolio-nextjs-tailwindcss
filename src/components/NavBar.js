@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import Logo from "./Logo";
 import { TwitterIcon, GitHubIcon, LinkedInIcon } from "./Icons";
+import {motion} from "framer-motion"
 
 
 const CustomLink = ({href, title, className=""}) => {
@@ -35,23 +36,39 @@ const NavBar = () => {
         <CustomLink href="/articles" title="Articles" className="mx-4"/>
       </nav>
         
-      
-      <nav>
-        <Link href="/" target ={"_blank"}>
+{/* Removing link element and placing a element in place, added social media profile links
+that have a small bounce when user hovers over caused from framer-motion        */}
+      <nav className="flex items-center justify-center flex-wrap">
+        
+        <motion.a href="https://twitter.com/tonedef_ari" target={"_blank"} 
+          className="w-6 mx-3"
+          whileHover={{y:-2}}
+          whileTap={{scale:0.9}}>
           <TwitterIcon />  
-        </Link>
-        <Link href="/" target ={"_blank"}>
+        </motion.a>
+        
+        <motion.a href="https://github.com/LazyRubiksCube" target={"_blank"}
+          className="w-6 mx-3"
+          whileTap={{scale:0.9}}
+          whileHover={{y:-2}}
+          >
           <GitHubIcon />
-        </Link>
-        <Link href="/" target ={"_blank"}>
+        </motion.a>
+        
+        <motion.a href="https://www.linkedin.com/in/adrian-ayala-09a51834/" target={"_blank"}
+          className="w-6 mx-3"
+          whileTap={{scale:0.9}}
+          whileHover={{y:-2}}>
           <LinkedInIcon />
-        </Link>
+        </motion.a>
          
 
       </nav>
+
       <div className="absolute left-[50%] top-2 translate-x-[-50%]">
       <Logo />
       </div>
+
     </header>  
   )
 }
