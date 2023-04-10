@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Layout from "@/components/Layout"
 import Image from 'next/image'
+import Link from 'next/link'
 import ProfilePic from "../../public/images/profile/adrianBW.png"
 import Hero from '@/components/Hero'
 import AnimatedText from '@/components/AnimatedText'
@@ -18,15 +19,19 @@ export default function Home() {
             <div className='w-1/2'>
               <Image src={ProfilePic} alt="adrianBnW" className='w-full h-auto' />
             </div>
-            <section id="hero">
+            {/* <section id="hero">
               <Hero />
-            </section>
+            </section> */}
             <div className='w-1/2 flex flex-col items-center self-center'>
-              <h1></h1>
-              <AnimatedText text="Turning Vision Into Reality With Code and Design." className='!text-5xl !text-left'/>
-              <p>
+              <AnimatedText text="Desire to See My Vision Transformed Reality With Code and Design." className='!text-5xl !text-left'/>
+              <p className='my-4 text-base font-medium'>
                 As a skilled full-stack developer, I am dedicated to turning ideas intro innovative web applications. Explore my latest projects and articles, showcasing my expertise in utilizing NextJS, TailWindCSS, and web development.
               </p>
+            </div>
+            <div className='flex items-center self-start mt-2'>
+              <Link href="mailto:ayala.adrian@gmail.com" target={"_blank"}
+              className="ml-4 text-lg font-medium capitalize text-dark underline"
+              >Contact Me</Link>
             </div>
          </div>
         </Layout>
