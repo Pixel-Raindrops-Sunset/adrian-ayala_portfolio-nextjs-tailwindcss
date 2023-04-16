@@ -25,7 +25,7 @@ export default function Home() {
             <div className='w-1/2 flex flex-col items-center self-center'>
               <AnimatedText text="Desire to See My Vision Transformed Reality With Code and Design." className='!text-5xl !text-left'/>
               <p className='my-4 text-base font-medium'>
-                As a skilled full-stack developer, I am dedicated to turning ideas intro innovative web applications. Explore my latest projects and articles, showcasing my expertise in utilizing NextJS, TailWindCSS, and web development.
+                As a pathetically, low-skilled full-stack developer, I have zero dedication to turning ideas intro innovative web applications. Explore my latest projects and articles, showcasing my expertise in utilizing NextJS, TailWindCSS, and web development.
               </p>
             </div>
             <div className='flex items-center self-start mt-2'>
