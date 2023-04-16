@@ -24,15 +24,30 @@ const _about = () => {
         <p className='font-medium my-4'>
         I believe that design is about more than just making things look pretty - it is about solving problems, creating intuitive, and enjoyable experiences for the community.
         </p>
-        <p className='font-medium'>
+<p className='font-medium'>
         Whether I am working on a website, mobile applications, or other digital products, I always bring my full commitment to design excellence.
-        </p>
+</p>
 
-          </div>
-        <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8'>
-        <div className='absolute top-0 -right-2 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark'/>
-          <Image src={ProfilePic} alt="Adrian Ayala" className='w-full h-auto rounded-2xl'/>
         </div>
+<div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8'>
+         
+<div className='absolute top-0 -right-2 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark'/>
+    <Image src={ProfilePic} alt="Adrian Ayala" className='w-full h-auto rounded-2xl'/>
+</div>
+<div className='col-span-2 flex flex-col items-end justify-between'>
+    <div className='flex flex-col items-end justify-center'>
+      <span className='inline-block text-5xl font-bold'>
+        2
+      </span>
+      <h2 className='text-xl font-medium capitalize text-dark/75'>Projects Completed</h2>   
+    </div>
+    <div className='flex flex-col items-end justify-center'>
+      <span className='inline-block text-5xl font-bold'>
+        4+
+      </span>
+      <h2 className='text-xl font-medium capitalize text-dark/75'>Years of Experience</h2>   
+    </div>  
+</div>
         </div>
         </Layout>
       </main>
