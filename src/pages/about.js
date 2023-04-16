@@ -1,9 +1,35 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import Head from 'next/head'
 import Layout from '@/components/Layout'
 import AnimatedText from '@/components/AnimatedText'
 import Image from 'next/image'
 import ProfilePic from "../../public/images/profile/adrianBW.png"
+import { useInView, useMotionValue, useSpring } from 'framer-motion'
+
+const AnimatedNumbers = ({value}) => {
+const ref = useRef(null);
+
+const motionValue = useMotionValue(0);
+const springValue = useSpring(motionValue, {duration: 2000})
+const isInView = useInView(ref,{once: true});
+
+useEffect (() => {
+  if(isInView){
+    motionValue.set(value);
+  }
+},[isInView, value, motionValue])
+
+useEffect (() => {
+  springValue.on("change", (latest) => {
+    if(ref.current && latest.toFixed(0) <= value){
+      ref.current.textContent = latest.toFixed(0);
+    }
+  })
+},[springValue,value])
+
+  return <span ref={ref}></span>
+}
+
 
 const _about = () => {
   return (
@@ -37,13 +63,13 @@ const _about = () => {
 <div className='col-span-2 flex flex-col items-end justify-between'>
     <div className='flex flex-col items-end justify-center'>
       <span className='inline-block text-5xl font-bold'>
-        2
+        <AnimatedNumbers value={3}/>+
       </span>
       <h2 className='text-xl font-medium capitalize text-dark/75'>Projects Completed</h2>   
     </div>
     <div className='flex flex-col items-end justify-center'>
       <span className='inline-block text-5xl font-bold'>
-        4+
+        <AnimatedNumbers value={6}/>+
       </span>
       <h2 className='text-xl font-medium capitalize text-dark/75'>Years of Experience</h2>   
     </div>  
